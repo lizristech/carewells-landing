@@ -16,7 +16,7 @@ export default async function PrivacyPolicyPage() {
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 leading-relaxed">
-      <h1 className="font-display text-4xl font-bold text-brand">Privacy Policy</h1>
+      <h1 className="animate-fade-up font-display text-5xl font-extrabold tracking-tight text-gradient">Privacy Policy</h1>
       <p className="mt-2 text-sm text-slate-500">{updated}</p>
       <div className="mt-8 space-y-4">
         {paragraphs.map((para, i) =>

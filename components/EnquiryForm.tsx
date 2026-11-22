@@ -18,7 +18,7 @@ type Props = {
 };
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 outline-none focus:border-brand focus:ring-2 focus:ring-brand/20";
+  "w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 outline-none transition placeholder:text-slate-400 hover:border-brand/30 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10";
 
 export default function EnquiryForm({ formName, fields, submitLabel = "Send" }: Props) {
   const required = fields.filter((f) => f.required).map((f) => f.name);
@@ -27,7 +27,8 @@ export default function EnquiryForm({ formName, fields, submitLabel = "Send" }: 
 
   if (state?.ok) {
     return (
-      <p role="status" className="rounded-lg bg-green-50 p-6 text-green-800">
+      <p role="status" className="animate-fade-up rounded-3xl border border-green-200 bg-green-50 p-8 text-center text-lg text-green-800">
+        <span className="mb-3 block text-4xl">✅</span>
         {state.message}
       </p>
     );
@@ -73,7 +74,7 @@ export default function EnquiryForm({ formName, fields, submitLabel = "Send" }: 
       <button
         type="submit"
         disabled={pending}
-        className="rounded-full bg-brand px-8 py-3 font-semibold text-white hover:bg-brand-dark disabled:opacity-60 sm:col-span-2 sm:justify-self-start"
+        className="rounded-full bg-gradient-to-r from-brand to-sky-500 px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl disabled:translate-y-0 disabled:opacity-60 sm:col-span-2 sm:justify-self-start"
       >
         {pending ? "Sending…" : submitLabel}
       </button>
